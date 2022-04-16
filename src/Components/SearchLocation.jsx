@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SearchLocation.css';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import Locations from './Locations';
-
+import styled from 'styled-components'
 
 const SearchLocation = () => {
     const [location, setLocation] = useState('');
@@ -44,17 +44,66 @@ const SearchLocation = () => {
     }
 
 
+    /*  const searchInput = {
+         border: 'none',
+         height: '100%',
+         width: '100%',
+         'focus': {
+             outline: 'none'
+         }
+     } */
+
+    const SearchInput = styled.input`
+    border: none;
+    height: 100%;
+    width: 100%;
+    &:focus{
+        outline: none
+    }
+    `
+
+    const buttonStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: ' #044fff',
+        color: 'white',
+        fontWeight: '600',
+        textTransform: 'capitalize',
+        border: 'none',
+        borderRadius: '10px',
+        width: '210px',
+        padding: '10px',
+        cursor: 'pointer',
+        marginTop: '8px',
+        marginBottom: '8px',
+    }
+
+    const arrowContainer = {
+        display: 'flex',
+        background: ' #0040cc',
+        padding: '4px',
+        borderRadius: '10px',
+        color: 'white',
+    }
     return (
-        <div className='search-location-container'>
+        <div style={{
+            borderRadius: '10px',
+            paddingLeft: '8px',
+            paddingRight: '8px',
+            boxShadow: `rgba(149, 157, 165, 0.2) 0px 8px 24px`,
+            display: 'flex',
+            position: 'relative'
+        }}>
             <div style={{
                 flex: 1
             }}>
 
-                <input value={location} onChange={handleChange} placeholder='Search Your location' className='search-input' />
+                <SearchInput value={location} onChange={handleChange} placeholder='Search Your location' />
             </div>
-            <button onClick={estimateHandler} className='estimate-button'>
+            <button onClick={estimateHandler} style={buttonStyle}>
                 estimate my income
-                <span className='arrow-container'>
+                <span style={arrowContainer}>
                     <AiOutlineArrowRight fontSize={'16px'} />
                 </span>
             </button>
