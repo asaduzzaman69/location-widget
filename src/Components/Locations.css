@@ -1,0 +1,24 @@
+.locations-container {
+    position: absolute;
+    list-style-type: none;
+    top: 60px;
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 0px;
+}
+
+.locations-container > li {
+    margin-top: 5px;
+    padding: 6px;
+    cursor: pointer;
+}
+.locations-container > li:hover {
+    background: gray;
+}
+
+.details-text {
+    margin-left: 10px;
+    color: gray;
+}
